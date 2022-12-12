@@ -11,6 +11,7 @@ void pop(stack_t **head, unsigned int ligne)
 	if (*head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack", ligne);
+		error = 1;
 		return;
 	}
 
