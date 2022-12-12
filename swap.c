@@ -12,6 +12,7 @@ void swap(stack_t **head, unsigned int ligne)
 	if (*head == NULL)
 	{
 		fprintf(stderr, "can't swap, stack too short", ligne);
+		error = 1;
 		return;
 	}
 
