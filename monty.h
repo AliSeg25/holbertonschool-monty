@@ -36,5 +36,6 @@ typedef struct instruction_s
 
 void pall(stack_t **h, __attribute((unused))unsigned int n);
 void push(stack_t **head, __attribute((unused))unsigned int n);
+void pint(stack_t **head, unsigned int ligne);
 
 #endif /* MONTY_H_INCLUDED*/
