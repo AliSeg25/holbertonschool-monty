@@ -8,7 +8,7 @@ void pall(stack_t **h, __attribute((unused))unsigned int n)
 {
 	stack_t *temp = *h;
 
-	while (temp != NULL)
+	while (temp)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
