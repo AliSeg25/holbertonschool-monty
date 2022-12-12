@@ -2,7 +2,7 @@
 /**
  * pint - Prints the top of the stack.
  * @head: The head of the dlistint_t list.
- * @n: the ligne
+ * @ligne: the ligne
  */
 void pint(stack_t **head, unsigned int ligne)
 {
