@@ -39,5 +39,6 @@ void push(stack_t **head, __attribute((unused))unsigned int n);
 void pint(stack_t **head, unsigned int ligne);
 void pop(stack_t **head, unsigned int ligne);
 void swap(stack_t **head, unsigned int ligne);
-
+void add(stack_t **head, unsigned int ligne);
+void nop(stack_t **head, unsigned int ligne);
 #endif /* MONTY_H_INCLUDED*/
