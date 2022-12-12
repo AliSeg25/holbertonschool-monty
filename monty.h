@@ -41,4 +41,7 @@ void pop(stack_t **head, unsigned int ligne);
 void swap(stack_t **head, unsigned int ligne);
 void add(stack_t **head, unsigned int ligne);
 void nop(stack_t **head, unsigned int ligne);
+void (*get_op(char *cmd))(stack_t **stack, unsigned int line_number);
+
+
 #endif /* MONTY_H_INCLUDED*/
