@@ -1,6 +1,7 @@
 #ifndef MONTY_H_INCLUDED
 #define MONTY_H_INCLUDED
 
+void push(stack_t **head, __attribute((unused))unsigned int n);
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
