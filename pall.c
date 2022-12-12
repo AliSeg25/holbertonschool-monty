@@ -4,7 +4,7 @@
  * @h: The head of the dlistint_t list.
  * @n: no attribute
  */
-void pall(stack_t *h, __attribute((unused))unsigned int n)
+void pall(stack_t **h, __attribute((unused))unsigned int n)
 {
 	stack_t *temp = *h;
 
