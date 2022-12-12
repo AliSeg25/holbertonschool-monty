@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * pint - Prints the top of the stack.
+ * pop - free head of the stack.
  * @head: The head of the stack.
  * @ligne: the ligne
  */
