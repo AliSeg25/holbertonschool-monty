@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * pop - Swap the top two elements of the stack.
+ * swap - Swap the top two elements of the stack.
  * @head: The head steack.
  * @ligne: the ligne
  */
-void pop(stack_t **head, unsigned int ligne)
+void swap(stack_t **head, unsigned int ligne)
 {
 	stack_t *tmp = (*head)->next;
 	int n = 0;
