@@ -3,9 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-void push(stack_t **head, __attribute((unused))unsigned int n);
-void pall(stack_t *h, __attribute((unused))unsigned int n);
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -37,5 +34,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void pall(stack_t *h, __attribute((unused))unsigned int n);
+void push(stack_t **head, __attribute((unused))unsigned int n);
 
 #endif /* MONTY_H_INCLUDED*/
