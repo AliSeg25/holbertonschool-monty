@@ -7,6 +7,7 @@
 void pop(stack_t **head, unsigned int ligne)
 {
 	stack_t *tmp = (*head)->next;
+	int n = 0;
 
 	if (*head == NULL)
 	{
