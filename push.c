@@ -4,7 +4,7 @@
  * @head: pointeur head du stack
  * @n: new value
  */
-void push(stack_t **head, __attribute((unused))unsigned int n)
+stack_t push(stack_t **head, __attribute((unused))unsigned int n)
 {
 	stack_t *new;
 
@@ -29,4 +29,6 @@ void push(stack_t **head, __attribute((unused))unsigned int n)
 	}
 
 	*head = new;
+
+	return(new);
 }
