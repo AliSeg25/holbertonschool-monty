@@ -12,6 +12,7 @@ void add(stack_t **head, unsigned int ligne)
 	if (*head == NULL)
 	{
 		fprintf(stderr, "can't add, stack too short", ligne);
+		error = 1;
 		return;
 	}
 
