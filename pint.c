@@ -12,5 +12,5 @@ void pint(stack_t **head, unsigned int ligne)
 		return;
 	}
 
-	print("%d\n", (*head)->n);
+	printf("%d\n", (*head)->n);
 }
