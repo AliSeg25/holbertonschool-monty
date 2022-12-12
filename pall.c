@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * pall - Prints all the elements stack.
- * @h: The head of the dlistint_t list.
+ * @h: The head of the stack.
  * @n: no attribute
  */
 void pall(stack_t **h, __attribute((unused))unsigned int n)
