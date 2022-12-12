@@ -1,5 +1,8 @@
 #ifndef MONTY_H_INCLUDED
 #define MONTY_H_INCLUDED
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 void push(stack_t **head, __attribute((unused))unsigned int n);
 void pall(stack_t *h, __attribute((unused))unsigned int n);
