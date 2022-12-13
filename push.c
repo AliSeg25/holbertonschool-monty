@@ -23,7 +23,7 @@ int check_digit(char *arg)
 /**
  * push - push an integer onto the stack
  * @stack: double pointer to head of stack
- * @line_number: line number of file we are processing
+ * @ligne: line number of file we are processing
  *
  */
 
