@@ -16,7 +16,7 @@ void add(stack_t **head, unsigned int ligne)
 		return;
 	}
 
-	sum = (*head)->n + temp->n;
+	sum = (*head)->n + tmp->n;
 	tmp->n = sum;
 
 	pop(head, ligne);
