@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * nop - doesn't do anything
- * @stack: double pointer to head of stack
- * @line_number: line number of file script
+ * nop - NE FAIT RIEN.
+ * @stack: To head of stack
+ * @line_number: Line number.
  */
-void nop(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int ligne)
 {
 	(void)stack;
 	(void)line_number;

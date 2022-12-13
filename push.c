@@ -27,18 +27,21 @@ int check_digit(char *arg)
  *
  */
 
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int ligne)
 {
 	int data;
 	char *arg;
 
 	arg = strtok(NULL, "\n\t ");
+
 	if (arg == NULL || check_digit(arg))
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", ligne);
 		exit(EXIT_FAILURE);
 	}
+
 	data = atoi(arg);
+
 	if (add_node(stack, data) == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -71,7 +74,7 @@ stack_t *add_node(stack_t **stack, int n)
 }
 
 /**
- * free_all - function to free and leave proper
+ * free_all - function to free.
  * @stack: pointer to head of stack
  * @fd: pointer to file opened
  */

@@ -39,19 +39,22 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+void free_all(stack_t *stack, FILE *fd);
+void pop(stack_t **stack, unsigned int ligne);
+void pall(stack_t **stack, __attribute((unused)) unsigned int ligne);
+void nop(stack_t **stack, unsigned int ligne);
 void add(stack_t **stack, unsigned int ligne);
 void check(char *cmd, stack_t **stack, unsigned int ligne);
-/* Prototypes */
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int ligne);
+void push(stack_t **stack, unsigned int ligne);
 stack_t *add_node(stack_t **stack, int n);
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-int check_digit(char *arg);
+void swap(stack_t **stack, unsigned int ligne);
+/* Prototypes */
 
-void free_all(stack_t *stack, FILE *fd);
-void pop(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+
+
+
+
 #endif /* MONTY_H */
