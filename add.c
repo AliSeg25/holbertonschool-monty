@@ -1,23 +1,23 @@
 #include "monty.h"
 /**
- * add - The opcode add adds the top two elements of the stack.
- * @head: The head steack.
- * @ligne: the ligne
+ * add - Function that add the two last node of a linked list data
+ * @stack: Double pointer to the head of stack
+ * @line_number: line number of file we process
  */
-void add(stack_t **head, unsigned int ligne)
+void add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = (*head)->next;
-	int sum = 0;
+	int res = 0;
 
-	if (*head == NULL)
+	if (*stack && (*stack)->next)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", ligne);
+		res += (*stack)->n;
+		pop(stack, line_number);
+		(*stack)->n += res;
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		error = 1;
 		return;
 	}
-
-	sum = (*head)->n + tmp->n;
-	tmp->n = sum;
-
-	pop(head, ligne);
 }

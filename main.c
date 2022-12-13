@@ -1,39 +1,46 @@
 #include "monty.h"
 #include <stdio.h>
+
 int error = 0;
+
 /**
- *
- *
- *
+ * main - main monty program to handle the bytecode files
+ * @argc: argument count
+ * @argv: array of argument
+ * Return: EXIT_SUCCESS for success, EXIT_FAILURE for failure
  */
+
 int main(int argc, char **argv)
 {
 	FILE *fd;
-	size_t n = 1024;
+	stack_t *stack = NULL;
+	unsigned int line_number = 0;
 	char str[1024];
 	char *tok = NULL;
-	unsigned int line_number = 0;
-	stack_t *stack = NULL;
-
+	size_t n = 1024;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
-	fd = fopen(argv[1], "r");/*ouverture du fichier en lecture simple*/
-
+	fd = fopen(argv[1], "r");
+	if (fd == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
 	while (fgets(str, n, fd) != NULL && error != 1)
 	{
 		line_number++;
 		tok = strtok(str, "\n\t ");
 		if (tok != NULL)
 		{
-			get_op(tok, &stack, line_number);
+			check(tok, &stack, line_number);
 		}
 	}
-
+	free_all(stack, fd);
 
 	if (error == 1)
 		exit(EXIT_FAILURE);

@@ -1,50 +1,5 @@
 #include "monty.h"
-/**
- * push - new node in stack
- * @head: pointeur head du stack
- * @n: new ligne
- */
-void push(stack_t **head, int ligne)
-{
-	int data;
-	char *arg;
 
-	arg = strtok(NULL, "\n\t ");
-	if (arg == NULL || check_digit(arg))
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", ligne);
-		exit(EXIT_FAILURE);
-	}
-	data = atoi(arg);
-	if (new_node(head, data) == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-}
-/**
- * new_node - add a newnode at beginning.
- * @head: pointeur head du stack
- * @data: new value to fill in new node
- * Return: pointer to new node
- */
-stack_t *new_node(stack_t **head, int n)
-{
-	stack_t *new;
-
-	new = malloc(sizeof(stack_t));
-	if (!new)
-		return (NULL);
-	new->n = n;
-	new->next = *head;
-	new->prev = NULL;
-
-	if (*head)
-		(*head)->prev = new;
-
-	*head = new;
-	return (new);
-}
 /**
  * check_digit - check if the string contains only digits
  * @arg: pointer on argument to check
@@ -63,4 +18,73 @@ int check_digit(char *arg)
 			return (1);
 	}
 	return (0);
+}
+
+/**
+ * push - push an integer onto the stack
+ * @stack: double pointer to head of stack
+ * @line_number: line number of file we are processing
+ *
+ */
+
+void push(stack_t **stack, unsigned int line_number)
+{
+	int data;
+	char *arg;
+
+	arg = strtok(NULL, "\n\t ");
+	if (arg == NULL || check_digit(arg))
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	data = atoi(arg);
+	if (add_node(stack, data) == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+}
+/**
+ * add_node - add a newnode at beginning of our
+ * linked-listed behavior stack
+ * @stack: double pointer to head of stack
+ * @n: new data to fill in new node
+ * Return: pointer to new node
+ */
+stack_t *add_node(stack_t **stack, int n)
+{
+	stack_t *new;
+
+	new = malloc(sizeof(stack_t));
+	if (!new)
+		return (NULL);
+	new->n = n;
+	new->next = *stack;
+	new->prev = NULL;
+
+	if (*stack)
+		(*stack)->prev = new;
+
+	*stack = new;
+	return (new);
+}
+
+/**
+ * free_all - function to free and leave proper
+ * @stack: pointer to head of stack
+ * @fd: pointer to file opened
+ */
+
+void free_all(stack_t *stack, FILE *fd)
+{
+	stack_t *tmp;
+
+	while (stack != NULL)
+	{
+		tmp = stack;
+		stack = stack->next;
+		free(tmp);
+	}
+	fclose(fd);
 }

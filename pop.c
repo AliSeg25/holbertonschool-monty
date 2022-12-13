@@ -1,20 +1,21 @@
 #include "monty.h"
 /**
- * pop - free head of the stack.
- * @head: The head of the stack.
- * @ligne: the ligne
+ * pop - function that removes the top element of stack
+ * @stack: double pointer to head of stack
+ * @line_number: line number of file we process on
  */
-void pop(stack_t **head, unsigned int ligne)
+void pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *head;
+	stack_t *tmp = *stack;
 
-	if (*head == NULL)
+	if (*stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack", ligne);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		error = 1;
 		return;
 	}
-
-	*head = (*head)->next;
+	*stack = (*stack)->next;
+	if (*stack)
+		(*stack)->prev = NULL;
 	free(tmp);
 }
