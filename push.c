@@ -12,7 +12,7 @@ void push(stack_t **head, int ligne)
 	arg = strtok(NULL, "\n\t ");
 	if (arg == NULL || check_digit(arg))
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line);
+		fprintf(stderr, "L%u: usage: push integer\n", ligne);
 		exit(EXIT_FAILURE);
 	}
 	data = atoi(arg);
