@@ -2,9 +2,9 @@
 /**
  * push - new node in stack
  * @head: pointeur head du stack
- * @n: new value
+ * @n: new ligne
  */
-void push(stack_t **head, __attribute((unused))unsigned int n)
+void push(stack_t **head, int ligne)
 {
 	int data;
 	char *arg;
@@ -12,7 +12,7 @@ void push(stack_t **head, __attribute((unused))unsigned int n)
 	arg = strtok(NULL, "\n\t ");
 	if (arg == NULL || check_digit(arg))
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line);
 		exit(EXIT_FAILURE);
 	}
 	data = atoi(arg);
@@ -28,7 +28,7 @@ void push(stack_t **head, __attribute((unused))unsigned int n)
  * @data: new value to fill in new node
  * Return: pointer to new node
  */
-stack_t *new_node(stack_t **head, int data)
+stack_t *new_node(stack_t **head, int n)
 {
 	stack_t *new;
 

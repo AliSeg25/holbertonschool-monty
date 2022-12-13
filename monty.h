@@ -36,15 +36,15 @@ typedef struct instruction_s
 
 extern int error;
 void pall(stack_t **h, __attribute((unused))unsigned int n);
-void push(stack_t **head, __attribute((unused))unsigned int n);
+void push(stack_t **head, int ligne);
 void pint(stack_t **head, unsigned int ligne);
 void pop(stack_t **head, unsigned int ligne);
 void swap(stack_t **head, unsigned int ligne);
 void add(stack_t **head, unsigned int ligne);
 void nop(stack_t **head, unsigned int ligne);
-void get_op(char *cmd, stack_t **stack, unsigned int line_number);
+void get_op(char *cmd, stack_t **stack, unsigned int ligne);
 int check_digit(char *arg);
-stack_t *new_node(stack_t **head, int data);
+stack_t *new_node(stack_t **head, int n);
 
 
 #endif /* MONTY_H_INCLUDED*/

@@ -6,7 +6,7 @@
  * @line_number:
  * Return: function saisi
  */
-void get_op(char *cmd, stack_t **stack, unsigned int line_number)
+void get_op(char *cmd, stack_t **stack, unsigned int ligne)
 {
 	unsigned int i = 0;
 
@@ -25,12 +25,12 @@ void get_op(char *cmd, stack_t **stack, unsigned int line_number)
 	{
 		if (strcmp(cmd, ops[i].opcode) == 0)
 		{
-			ops[i].f(stack, line_number);
+			ops[i].f(stack, ligne);
 			return;
 		}
 	}
 
-	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, cmd);
+	fprintf(stderr, "L%u: unknown instruction %s\n", ligne, cmd);
 
 	exit(EXIT_FAILURE);
 }
