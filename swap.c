@@ -1,9 +1,8 @@
 #include "monty.h"
-
 /**
- *swap - swaps the top two.
- *@stack: To head of stack
- *@line_number: line number.
+ * swap - swaps the top two.
+ * @stack: To head of stack
+ * @ligne : line number.
  */
 void swap(stack_t **stack, unsigned int ligne)
 {
