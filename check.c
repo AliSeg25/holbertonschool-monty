@@ -3,7 +3,7 @@
  * check - check The function.
  * @cmd: commande a saisir.
  * @stack: double pointer to head of stack.
- * @line: ligne number.
+ * @ligne: ligne number.
  */
 void check(char *cmd, stack_t **stack, unsigned int ligne)
 {
