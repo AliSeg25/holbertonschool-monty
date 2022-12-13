@@ -11,7 +11,7 @@ void add(stack_t **stack, unsigned int ligne)
 	if (*stack && (*stack)->next)
 	{
 		res += (*stack)->n;
-		pop(stack, line_number);
+		pop(stack, ligne);
 		(*stack)->n += res;
 	}
 	else
