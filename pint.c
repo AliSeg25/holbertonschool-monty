@@ -2,7 +2,7 @@
 /**
  * pint - prints the value at top.
  * @stack: double pointer at head of stack
- * @line_number: line number of the file we process on
+ * @ligne: line number of the file we process on
  */
 void pint(stack_t **stack, unsigned int ligne)
 {
