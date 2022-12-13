@@ -17,7 +17,6 @@ void get_op(char *cmd, stack_t **stack, unsigned int ligne)
 		{"nop", nop},
 		{"pop", pop},
 		{"swap", swap},
-		{"push", push},
 		{NULL, NULL}
 	};
 
