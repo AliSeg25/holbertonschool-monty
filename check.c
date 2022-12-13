@@ -1,14 +1,14 @@
 #include "monty.h"
 /**
- * check - check what function to pick according to input
- * @op: opcode file to run on
- * @stack: double pointer to head of stack
- * @line_number: line number of file we process
+ * check - check The function.
+ * @cmd: commande a saisir.
+ * @stack: double pointer to head of stack.
+ * @line: ligne number.
  */
-void check(char *op, stack_t **stack, unsigned int line_number)
+void check(char *cmd, stack_t **stack, unsigned int ligne)
 {
 	int i;
-	instruction_t check_op[] = {
+	instruction_t op[] = {
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
@@ -19,14 +19,14 @@ void check(char *op, stack_t **stack, unsigned int line_number)
 		{NULL, NULL},
 	};
 
-	for (i = 0; check_op[i].opcode != NULL; i++)
+	for (i = 0; op[i].opcode != NULL; i++)
 	{
-		if (strcmp(op, check_op[i].opcode) == 0)
+		if (strcmp(cmd, op[i].opcode) == 0)
 		{
-			check_op[i].f(stack, line_number);
+			op[i].f(stack, ligne);
 			return;
 		}
 	}
-	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, op);
+	fprintf(stderr, "L%u: unknown instruction %s\n", ligne, cmd);
 	exit(EXIT_FAILURE);
 }

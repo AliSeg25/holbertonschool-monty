@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * add - Function that add the two last node of a linked list data
- * @stack: Double pointer to the head of stack
- * @line_number: line number of file we process
+ * add - Add the two last node.
+ * @stack: Double pointer to the head of stack.
+ * @ligne_number: The line numbee.
  */
-void add(stack_t **stack, unsigned int line_number)
+void add(stack_t **stack, unsigned int ligne)
 {
 	int res = 0;
 
@@ -16,7 +16,7 @@ void add(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", ligne);
 		error = 1;
 		return;
 	}
