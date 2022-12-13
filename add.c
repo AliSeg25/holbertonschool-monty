@@ -2,7 +2,7 @@
 /**
  * add - Add the two last node.
  * @stack: Double pointer to the head of stack.
- * @ligne_number: The line numbee.
+ * @ligne: The line numbee.
  */
 void add(stack_t **stack, unsigned int ligne)
 {
