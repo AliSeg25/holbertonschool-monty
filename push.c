@@ -4,7 +4,7 @@
  * @head: pointeur head du stack
  * @n: new value
  */
-stack_t push(stack_t **head, __attribute((unused))unsigned int n)
+void push(stack_t **head, __attribute((unused))unsigned int n)
 {
 	int data;
 	char *arg;
