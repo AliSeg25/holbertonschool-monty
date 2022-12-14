@@ -1,8 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
-
 int error = 0;
-
 /**
  * main - main program
  * @argc: numnber argument.
